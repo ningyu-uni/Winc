@@ -90,7 +90,7 @@ rm -f "$appdir/AppRun"
 install -m755 release/linux/AppRun "$appdir/AppRun"
 # The architecture is named for appimagetool; it cannot reliably infer it from the AppDir.
 ARCH=x86_64 APPIMAGE_EXTRACT_AND_RUN=1 "$tools/appimagetool.AppImage" --appimage-extract-and-run \
-  --runtime-file "$tools/runtime-x86_64" "$appdir" "$bundle/appimage-glibc228/$stem.AppImage"
+  --runtime-file "$tools/runtime" "$appdir" "$bundle/appimage-glibc228/$stem.AppImage"
 image="$root/$bundle/appimage-glibc228/$stem.AppImage"
 (cd "$(dirname "$image")" && sha256sum "$(basename "$image")" > "$(basename "$image").sha256")
 
